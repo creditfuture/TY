@@ -1,0 +1,24 @@
+
+ $sudo raspi-config
+   --> Interface  --> Camera  -->enable,finish
+
+ $sudo reboot
+
+ $sudo apt-get install python3-picamera
+
+ $sudo apt-get install python-picamera
+
+ $sudo nano cameraexample.py
+
+        import picamera
+	import time
+
+        camera = pi camera.PiCamera()
+	camera.vflip = True
+	camera.capture("image.jpg")
+	camera.start_recording("vid.h264")
+	time.sleep(5)
+	camera.stop_recording
+	camera.start_preview()   ----- extra	
+
+ $omxplayer vid.h264

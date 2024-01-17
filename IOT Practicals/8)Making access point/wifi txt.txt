@@ -1,0 +1,71 @@
+
+ $sudo apt-get update
+ $sudo apt-get upgrade            .... for updation
+
+ $sudo apt-get install hostapd 
+
+ $sudo apt-get install bridge-utils         ---- bridge is used to make connection
+
+ $sudo nano /etc/hostapd/hostapd.conf
+ 
+        #Bridge mode
+	bridge=br0
+	
+	#Networking interface
+	interface=wlan0
+
+ 	#wifi configuration
+	ssid=Gaurav                  ---- wifi acces point name
+	channel=1
+	hw_mode=g
+	country_code=IN
+	ieee80211n=1
+	ieee80211d=1
+	wmm_enabled=1
+
+	#wifi security
+	auth_algs=1
+	wpa=2
+	wpa_key_mgmt=WPA-PSK
+	rsn_pairwise=CCMP
+	wpa_passphrase=12345678          ------- access point password
+[ctrl+x, Y, enter]
+interface
+
+ $sudo nano /etc/network/interfaces
+	
+	auto lo
+	iface lo inet loopback
+
+	#Ethernet
+	auto eth0
+	allow-hotplug eth0
+	iface eth0 inet manual
+
+	#wifi
+	auto wlan0
+	allow-hotplug wlan0
+	iface wlan0 inet manual
+	wireless-power off
+
+	#Bridge
+	auto br0
+	iface br0 inet dhcp
+	bridge_ports eth0 wlan0
+	bridge_fd 0
+	bridge_stp off
+[ctrl+x, Y, enter]
+
+ $sudo nano /etc/default/hostapd
+  
+ 	RUN_DAEMON=yes                                ---- Remove comment sign
+	DAEMON_CONF="/etc/hostapd/hostapd.conf"
+
+ $sudo reboot                                           ---- wifi is start
+
+ $
+  sudo Systemctl unmask hostapd                         ---- If wifi is not start
+                                                             Put this commands
+  sudo Systemctl start hostapd                 
+
+  sudo Systemctl enable hostapd

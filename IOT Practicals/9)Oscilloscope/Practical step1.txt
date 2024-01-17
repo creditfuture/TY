@@ -1,0 +1,33 @@
+ Connection
+ ADS1x15ADC     Pin Number      GPIO Number
+    VDD             17		    3.3v	
+    GND              9              GND
+    SCL       	     5		    GPIO 3
+    SDA		     3		    GPIO 2
+
+-----------------------------------------------------
+ 
+ sudo pip3 install adafruit-circuitpython-ads1x15
+
+ sudo pip3 install adafruit-blinka
+
+ sudo git clone https://github.com/adafruit/Adafruit_CircuitPython_ADS1x15
+
+ cd Adafruit_CircuitPython_ADS1x15
+
+ cd examples
+
+ ls
+
+ sudo python3 ads1x15_simplest.py
+
+    [ .... If not Working ....
+           
+           sudo raspi config > Interface option > I2C > Finish
+
+           sudo reboot
+
+       .... After working ctrl+x to stop .... ]     --- Program Run
+
+ sudo apt-get install python3-matplotlib
+       ( Press Y )

@@ -1,0 +1,31 @@
+connections
+                         5v      gnd      txd      rxd
+ Fingerprint Module   -- RED    BLACK    YELLOW   WHITE
+
+ USB serial converter -- 5.0V    GND      RXD      TXD
+----------------------------------------------------------------------
+$sudo bash            ------- read root privilages
+
+ wget -O - http://apt.pm-codeworks.de/pm-codeworks.de.gpg | apt-key add -
+
+ wget http://apt.pm-codeworks.de/pm-codeworks.list -P /etc/apt/sources.list.d/
+
+$sudo apt-get update
+
+$sudo apt-get install python3-fingerprint--yes
+
+$ls /dev/ttyUSB*
+$exit
+
+$cd /usr/share/doc/python3-fingerprint/examples
+
+$sudo python3 example_index.py
+
+-------------------------------------------------------------------------
+
+index.py    ----  shows template index table
+enroll.py   ----  stores new fingerprint
+delete.py   ----  deletes a fingerprint from sensor
+search.py   ----  search for recorded fingerprint
+downloadimage.py  ---- read fingerprint and download it
+generaterandom.py ---- generate 32 bit random number

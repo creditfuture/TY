@@ -1,0 +1,31 @@
+
+ sudo apt-get install python-pip
+
+ sudo pip insatll telepot
+
+       (.... Write this python code and save it....)
+
+ ls
+
+ cd [choose folder]
+
+ sudo python telegramled.py    ---- code run and controll led from telegram
+
+-----------------------------------------------------------------------------------
+connections
+   Led Terminal        Pin Number          GPIO Number
+
+   Green Positive         Pin 31             GPIO 6
+   Yellow Positive        Pin 33             GPIO 13
+   Red Positive           Pin 35             GPIO 19
+   Blue Positive          Pin 37             GPIO 26
+   Negative of all four   Pin 9              GND
+--------------------------------------------------------------------------------
+telegram bot
+
+ search "Bot Father" and click on start.
+ create new bot using "/newbot"
+ provide name (eg.gaurav)
+ provide username (eg.gaurav_bot)
+ receive token 
+-------------------------------------------------------------------------------

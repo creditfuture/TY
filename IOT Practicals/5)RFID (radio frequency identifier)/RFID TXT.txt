@@ -1,0 +1,61 @@
+
+connections
+
+ RFID PIN --> SDA  SCK  MOSI  MISO  GND  RST  3.3V
+ RPI PIN  --> 24   23   19    21    6    22   1  
+-----------------------------------------------------------------------------
+ $sudo raspi-config
+ -> 3)Interface Option  -> 4)SPI   ->Yes , Finish
+
+ $sudo reboot
+
+ $lsmod | grep spi                     ---- confirm connections
+
+ $sudo apt-get install python3-dev
+
+ $sudo apt-get install python3-spidev
+
+ $sudo git clone http://github.com/lthiery/SPI-Py.git
+ $ls
+ $cd SPI-Py/           ------ select SPI-Py folder and write next command in it
+ $ls
+
+ $sudo python3 setup.py install
+
+ $sudo git clone https://github.com/pimylifeup/MFRC522-python.git
+ 
+ $sudo pip3 install mfrc522
+ $ls
+ $cd MFRC522-python/
+ 
+ $sudo nano read.py               ---------->> $sudo python3 read.py
+
+        import RPi.GPIO as GPIO
+ 	from mfrc522 import SimpleMFRC522
+ 	reader = SimpleMFRC522()
+	print("looking for card")
+	try:
+	    id,text=reader.read()
+	    print(id)
+	    print(text)
+	finally:
+	    GPIO.cleanup()
+   [ctrl+x  --> Y    --> Enter ]
+
+ $sudo nano write.py
+
+        import RPi.GPIO as GPIO
+ 	from mfrc522 import SimpleMFRC522
+ 	reader = SimpleMFRC522()
+	try:
+	    text=input("Enter data to write on card")
+	    print("Now place your card")
+	    reader.write(text)
+	    print("Data Written Successfully")
+	finally:
+	    GPIO.cleanup()
+   [ctrl+x  --> Y    --> Enter ]
+	
+ 
+
+ 

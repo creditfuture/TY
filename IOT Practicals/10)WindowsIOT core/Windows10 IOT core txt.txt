@@ -1,0 +1,29 @@
+ 
+ 1) Insert your SD card into SD card reader and connect it to your PC.
+
+ 2) Format the SD card using SDFormatter Application.
+
+ 3) Open Windows 10 developer center in browser.
+
+ 4) Search Windows 10 IOT core Dashboard and Download it.
+
+ 5) After Download, install their full setup.
+      Install --> Run --> Setup new device button
+     
+     *Device Type = Broadcomm raspberry Pi
+     *OS build    = Windows 10 IOT core
+     *Drive       = 
+     *Device Name = Raspberry Pi
+     *New Administration Password = 1234
+     *Confirm Administration Password = 1234
+  (Download  and install --> Continue  --> Yes
+
+ 6) Eject the Card Reader
+
+        On Raspberry Pi
+ 
+   1) Now connect cardreader to raspberry Pi and start the raspberry Pi.
+
+   2) Skip the WiFi step if the ethernet cable is connect.
+
+   3) Maybe Later.

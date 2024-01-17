@@ -1,0 +1,59 @@
+
+
+ Connections 
+
+ Relay Board Pin      Function    RPI Physical Pin      Raspberry function
+      +5v             +5V Power         4	              5V
+      I/P	       Data In          7                    GPIO 4
+      GND	       Ground           6                     GND
+----------------------------------------------------------------------------
+LED TO TEST
+Led terminal    RPi Physical Pin    
+  Positive  	       37	   
+  Negative	       39
+--------------------------------------------------------------------------------------------------------------
+   {download the webiopi Framework file }
+ #pwd
+
+ #wget http://sourceforge.net/projects/webiopi/files/WebIoPi-0.7.1.tar.gz
+
+ #tar xvzf WebIoPi-0.7.1.tar.gz
+
+ #cd WebIoPi-0.7.1/               ....[next code in this folder]
+
+    { install patch file }
+
+ #wget https://raw.githubusercontent.com/doublebind/raspi/master/webiopi-pi2bplus.patch
+
+ #patch -p1 -i webiopi-pi2bplus.patch
+
+    { install setup of webiopi framework, run setup file }
+
+ #sudo ./setup.sh
+
+ #sudo reboot
+
+    { test webiopi installation }
+
+ #sudo webiopi -d -c /etc/webiopi/config
+...............................................................
+    [Open Google Chrome ]
+
+ Type IP address(eg.192.168.1.197:8000)                 ---- ifconfig (used to know ip address)
+
+    Username = webiopi
+    Password = raspberry
+------------------------------------------------------------------
+ 
+ #git clone https://github.com/advardam/HomeAutomation.git
+
+ Open > HomeAutomation Folder > Copy webapp > Paste in Home Pi
+
+ #sudo nano /etc/webiopi/config
+
+ #sudo /etc/init.d/webiopi start        -restart use to restart the Webiopi service
+                                        -stop use to stop the Webiopi service
+ #sudo /etc/init.d/webiopi status                  
+
+  (if not working 
+  
